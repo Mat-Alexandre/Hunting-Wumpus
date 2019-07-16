@@ -12,9 +12,10 @@ class View:
             for j in range(4):
                 self.squares[i][j] = pygame.Rect((j*100, (3-i)*100), size)
 
-    def mapChar(self, hero):
+    def heroLocation(self, hero):
         for i in range(4):
             for j in range(4):
-                print(4*(3-i)+j,'',end='')
-            print()
-        print(hero.position)
+                if 4*(3-i)+j == hero.position:
+                    x = j
+                    y = i
+        return x, y

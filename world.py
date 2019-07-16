@@ -4,6 +4,7 @@ class Square:
     def __init__(self, id, perception):
         self.id = id
         self.nbh = []
+        self.visited = False
         if perception == False:
             self.prop = {'Breeze': False, 'Hole': False, 'Wumpus': False, 'Stink': False, 'Gold': False}
         else:
@@ -13,7 +14,7 @@ class Square:
         return '{}'.format(int(self.id))
     
     def __str__(self):
-        return int(self.id)
+        return self.id
     
     def getInfo(self):
         return 'ID:{:2},\tNeighbors:{},\t\tProperties:{}'.format(self.id, self.nbh, self.prop)
